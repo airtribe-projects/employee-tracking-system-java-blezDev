@@ -18,40 +18,96 @@
 
 ---
 
-## API Endpoints
+## **Department APIs**
 
-### **Department APIs**
 The Department APIs provide functionality to manage department-related data. The following operations are supported:
 
-GET /departments: Retrieves a list of all departments. Accessible by roles: ADMIN and MANAGER.
-GET /departments/{id}: Fetches details of a specific department by its ID. Accessible by roles: ADMIN and MANAGER.
-POST /departments: Allows adding a new department. Accessible by role: ADMIN.
-PUT /departments/{id}: Updates details of an existing department. Accessible by role: ADMIN.
-DELETE /departments/{id}: Deletes a specific department. Accessible by role: ADMIN.
-GET /departments/{id}/projects: Fetches projects within a specific department. Accessible by roles: ADMIN and MANAGER.
+- **GET /departments**  
+  Retrieves a list of all departments.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER`
+
+- **GET /departments/{id}**  
+  Fetches details of a specific department by its ID.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER`
+
+- **POST /departments**  
+  Allows adding a new department.  
+  **Accessible By:** Role: `ADMIN`
+
+- **PUT /departments/{id}**  
+  Updates details of an existing department.  
+  **Accessible By:** Role: `ADMIN`
+
+- **DELETE /departments/{id}**  
+  Deletes a specific department.  
+  **Accessible By:** Role: `ADMIN`
+
+- **GET /departments/{id}/projects**  
+  Fetches projects within a specific department.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER`
 
 ---
 
-### **Employee APIs**
-The Employee APIs enable operations on employee data. The supported endpoints are:
+## **Employee APIs**
 
-GET /employees: Retrieves a list of all employees. Accessible by roles: ADMIN and MANAGER.
-GET /employees/{id}: Fetches details of a specific employee by ID. Accessible by ADMIN and MANAGER (with certain restrictions for managers).
-POST /employees: Allows adding a new employee. Accessible by role: ADMIN.
-PUT /employees/{id}: Updates details of an existing employee. Accessible by role: ADMIN.
-DELETE /employees/{id}: Deletes a specific employee. Accessible by role: ADMIN.
-GET /employees/search: Allows searching for employees based on certain criteria. Accessible by roles: ADMIN and MANAGER.
+The Employee APIs enable operations on employee data. The following endpoints are supported:
+
+- **GET /employees**  
+  Retrieves a list of all employees.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER`
+
+- **GET /employees/{id}**  
+  Fetches details of a specific employee by ID.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER` (with certain restrictions for `MANAGER`)
+
+- **POST /employees**  
+  Allows adding a new employee.  
+  **Accessible By:** Role: `ADMIN`
+
+- **PUT /employees/{id}**  
+  Updates details of an existing employee.  
+  **Accessible By:** Role: `ADMIN`
+
+- **DELETE /employees/{id}**  
+  Deletes a specific employee.  
+  **Accessible By:** Role: `ADMIN`
+
+- **GET /employees/search**  
+  Allows searching for employees based on certain criteria.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER`
+
 ---
 
-### **Project APIs**
-The Project APIs provide functionality for managing projects. The endpoints include:
+## **Project APIs**
 
-GET /projects: Retrieves a list of all projects. Accessible by roles: ADMIN and MANAGER.
-GET /projects/{id}: Fetches details of a specific project by its ID. Accessible by roles: ADMIN and MANAGER.
-POST /projects: Allows adding a new project. Accessible by role: ADMIN.
-PUT /projects/{id}: Updates details of an existing project. Accessible by role: ADMIN.
-DELETE /projects/{id}: Deletes a specific project. Accessible by role: ADMIN.
+The Project APIs provide functionality for managing projects. The following operations are supported:
+
+- **GET /projects**  
+  Retrieves a list of all projects.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER`
+
+- **GET /projects/{id}**  
+  Fetches details of a specific project by its ID.  
+  **Accessible By:** Roles: `ADMIN`, `MANAGER`
+
+- **POST /projects**  
+  Allows adding a new project.  
+  **Accessible By:** Role: `ADMIN`
+
+- **PUT /projects/{id}**  
+  Updates details of an existing project.  
+  **Accessible By:** Role: `ADMIN`
+
+- **DELETE /projects/{id}**  
+  Deletes a specific project.  
+  **Accessible By:** Role: `ADMIN`
+
 ---
+
+## Notes
+
+- Replace `{id}` in the URL with the specific resource ID (e.g., department, employee, or project).
+- Ensure proper role-based access control is implemented before using these endpoints.
 
 ## Role-Based Access Control
 - **ADMIN**: Full access to all APIs.
